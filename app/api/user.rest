@@ -1,0 +1,57 @@
+@baseUrl = http://localhost:3000/api/
+@authToken = "{{login.response.headers.x-auth-token}}"
+#####################################################################---> welcome
+
+GET  {{baseUrl}}user/productList?sort=4
+Content-Type: application/json
+
+###
+
+GET  {{baseUrl}}user/productDetail/636e2764ea5986fd0238a99b
+Content-Type: application/json
+
+###
+
+POST  {{baseUrl}}user/addCommentProduct/636e2764ea5986fd0238a99b
+Content-Type: application/json
+
+{
+    "user":"فرنوش",
+    "text":"بد بود",
+    "score":"5"
+}
+
+###
+
+# @name login
+POST  {{baseUrl}}user/login
+Content-Type: application/json
+
+{
+    "email":"test1@gmail.com",
+    "password":"123456"
+}
+
+###
+POST  {{baseUrl}}user/register
+Content-Type: application/json
+
+{
+    "name":"کیانوش ",
+    "email":"test2@gmail.com",
+    "password":"123456"
+}
+
+###
+
+
+//kar nmikone
+# POST  {{baseUrl}}user/updateBasket
+# Content-Type: application/json
+# x-access-token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzZlN2E1NzZjNGJlNjI1ZDgyMGU2NWEiLCJyb2xlIjoidXNlciIsImlhdCI6MTY2ODE4OTUwNn0.IFmMiGhFV2imnvwNeL2wcy1o1cD3oJk2FQ5mZ11oRCE"
+
+# {
+#     "productId":"636e2764ea5986fd0238a99b"
+# }
+
+# ###
